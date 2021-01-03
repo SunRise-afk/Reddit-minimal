@@ -34,6 +34,7 @@ export const ContentItemContainer = (props) => {
       showComments={haveComments}
       comments={comments}
       commentBtnClickHandler={setCommentsBtnActive}
+      hideComments={setHaveComments}
     ></ContentItem>
   );
 };

@@ -66,8 +66,6 @@
 .comment_icon {
   margin-right: 5px;
 }
-
-.tmp {
-  width: 100%;
-  background-color: #ccc;
+.comment_count {
+  cursor: pointer;
 }

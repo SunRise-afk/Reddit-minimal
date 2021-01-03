@@ -37,9 +37,13 @@ export const ContentItem = (props) => {
             : Math.floor(props.postDate / 3.6e6) + " hours ago"}
         </p>
         <p
-          onClick={() =>
-            props.commentBtnClickHandler((prevState) => !prevState)
-          }
+          className={styles.comment_count}
+          onClick={() => {
+            props.commentBtnClickHandler((prevState) => !prevState);
+            if (props.showComments) {
+              props.hideComments(false);
+            }
+          }}
         >
           <span className={styles.comment_icon}>
             <i className="far fa-comment"></i>
@@ -57,7 +61,6 @@ export const ContentItem = (props) => {
             );
           })
         : null}
-      <div className={styles.tmp}></div>
     </div>
   );
 };
