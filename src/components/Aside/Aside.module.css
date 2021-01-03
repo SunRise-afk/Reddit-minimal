@@ -1,6 +1,11 @@
 .aside_container {
   flex: 1;
   background-color: white;
-  border: 1px solid black;
   margin-left: 20px;
+  border-radius: 10px;
+  height: 100%;
+  box-shadow: 0px 8px 34px -18px #000000;
+}
+.subreddits_title {
+  margin-left: 10px;
 }

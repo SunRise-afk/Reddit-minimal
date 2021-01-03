@@ -1,0 +1,28 @@
+.item_container {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+.item_container:hover {
+  background: #eee;
+}
+.icon_img_container {
+  width: 30px;
+  height: 30px;
+  border: 2px solid grey;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 5px;
+}
+.icon_img_container img {
+  max-width: 100%;
+  height: auto;
+}
+.item_paragraph {
+  font-size: 16px;
+  font-weight: 700;
+  color: grey;
+}

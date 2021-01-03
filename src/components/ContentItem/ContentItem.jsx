@@ -2,17 +2,16 @@ import React from "react";
 import styles from "./ContentItem.module.css";
 
 export const ContentItem = (props) => {
-  console.log(props.postDate.toString().length);
   return (
     <div className={styles.container}>
       <div className={styles.post_container}>
         <div className={styles.ups_container}>
           <button className={`${styles.arrow_button} ${styles.up_button}`}>
-            <i class="fas fa-arrow-up"></i>
+            <i className="fas fa-arrow-up"></i>
           </button>
           <p className={styles.ups_paragraph}>{props.postUps}</p>
           <button className={`${styles.arrow_button} ${styles.down_button}`}>
-            <i class="fas fa-arrow-down"></i>
+            <i className="fas fa-arrow-down"></i>
           </button>
         </div>
         <div className={styles.content_post}>
@@ -37,7 +36,7 @@ export const ContentItem = (props) => {
         </p>
         <p>
           <span className={styles.comment_icon}>
-            <i class="far fa-comment"></i>
+            <i className="far fa-comment"></i>
           </span>
           {props.postCommentNum}
         </p>
