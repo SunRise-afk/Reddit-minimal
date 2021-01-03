@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./ContentItem.module.css";
 
 export const ContentItem = (props) => {
+  console.log(props.data);
   return (
     <div className={styles.container}>
       <div className={styles.post_container}>
@@ -17,13 +18,15 @@ export const ContentItem = (props) => {
         <div className={styles.content_post}>
           <p>{props.title}</p>
           <div className={styles.post_image_container}>
-            {props.postImage[props.postImage.length - 1] !== "/" && (
+            {props.postImage.includes(".jpg") ||
+            props.postImage.includes(".png") ||
+            props.postImage.includes(".gif") ? (
               <img
                 src={props.postImage}
                 className={styles.post_image}
                 alt="postImage"
               ></img>
-            )}
+            ) : null}
           </div>
         </div>
       </div>

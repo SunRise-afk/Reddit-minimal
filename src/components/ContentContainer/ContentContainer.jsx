@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Aside } from "../Aside/Aside";
 import { Content } from "../Content/Content";
+import { LoadingPlugContainer } from "../LoadingPlug/LoadingPlugContainer";
 import styles from "./ContentContainer.module.css";
 
 export const ContentContainer = () => {
@@ -60,7 +61,11 @@ export const ContentContainer = () => {
   };
   return (
     <div className={styles.container}>
-      <Content data={statePosts}></Content>
+      {isLoadign ? (
+        <LoadingPlugContainer></LoadingPlugContainer>
+      ) : (
+        <Content data={statePosts}></Content>
+      )}
       <Aside data={stateSubreddits} changeSrHandler={changeSubreddit}></Aside>
     </div>
   );
