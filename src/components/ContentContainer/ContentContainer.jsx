@@ -8,9 +8,9 @@ export const ContentContainer = () => {
   const [statePosts, setStatePosts] = useState(null);
   const [stateSubreddits, setStateSubreddits] = useState(null);
   const [stateSubreddit, setStateSubreddit] = useState(null);
-  const [isLoadign, setIsLoadign] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
-    setIsLoadign(true);
+    setIsLoading(true);
     fetch("https://www.reddit.com/r/popular.json")
       .then((response) => {
         if (response.ok) {
@@ -20,7 +20,7 @@ export const ContentContainer = () => {
       })
       .then((response) => {
         setStatePosts(response.data.children);
-        setIsLoadign(false);
+        setIsLoading(false);
         console.log(response);
       });
   }, []);
@@ -42,7 +42,7 @@ export const ContentContainer = () => {
       return;
     }
     console.log("daet");
-    setIsLoadign(true);
+    setIsLoading(true);
     fetch(`https://www.reddit.com/${stateSubreddit}/.json`)
       .then((response) => {
         if (response.ok) {
@@ -52,7 +52,7 @@ export const ContentContainer = () => {
       .then((response) => {
         console.log(response.data.children);
         setStatePosts(response.data.children);
-        setIsLoadign(false);
+        setIsLoading(false);
       });
   }, [stateSubreddit]);
 
@@ -61,7 +61,7 @@ export const ContentContainer = () => {
   };
   return (
     <div className={styles.container}>
-      {isLoadign ? (
+      {isLoading ? (
         <LoadingPlugContainer></LoadingPlugContainer>
       ) : (
         <Content data={statePosts}></Content>

@@ -1,5 +1,5 @@
 import React from "react";
-import { ContentItem } from "../ContentItem/ContentItem";
+import { ContentItemContainer } from "../ContentItem/ContentItemContainer";
 import styles from "./Content.module.css";
 
 export const Content = (props) => {
@@ -15,9 +15,8 @@ export const Content = (props) => {
                 ? item.data.url
                 : item.data.thumbnail;
             return (
-              <ContentItem
+              <ContentItemContainer
                 title={item.data.title}
-                data={props.data}
                 postAuthor={item.data.author}
                 postImage={imageUrl}
                 postUps={item.data.ups}
@@ -32,8 +31,9 @@ export const Content = (props) => {
                       .join("")}`
                 }
                 postCommentNum={item.data.num_comments}
+                permalink={item.data.permalink}
                 key={item.data.id}
-              ></ContentItem>
+              ></ContentItemContainer>
             );
           })}
     </div>

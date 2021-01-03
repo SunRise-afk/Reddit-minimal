@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./ContentItem.module.css";
 
 export const ContentItem = (props) => {
-  console.log(props.data);
   return (
     <div className={styles.container}>
       <div className={styles.post_container}>
@@ -37,13 +36,28 @@ export const ContentItem = (props) => {
             ? Math.floor(props.postDate / 6e4) + " minutes ago"
             : Math.floor(props.postDate / 3.6e6) + " hours ago"}
         </p>
-        <p>
+        <p
+          onClick={() =>
+            props.commentBtnClickHandler((prevState) => !prevState)
+          }
+        >
           <span className={styles.comment_icon}>
             <i className="far fa-comment"></i>
           </span>
           {props.postCommentNum}
         </p>
       </div>
+      {props.showComments
+        ? props.comments.map((item) => {
+            return (
+              <div key={item.data.id}>
+                {item.data.author}
+                {item.data.body}
+              </div>
+            );
+          })
+        : null}
+      <div className={styles.tmp}></div>
     </div>
   );
 };
