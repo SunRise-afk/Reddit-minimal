@@ -20,8 +20,8 @@ export const ContentContainer = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <Content></Content>
-      <Aside></Aside>a
+      <Content data={state}></Content>
+      <Aside></Aside>
     </div>
   );
 };

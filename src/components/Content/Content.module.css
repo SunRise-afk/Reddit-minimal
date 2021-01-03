@@ -1,4 +1,5 @@
 .tmp {
   flex: 4;
-  background-color: red;
+  background-color: white;
+  margin-left: 20px;
 }
