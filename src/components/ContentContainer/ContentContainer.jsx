@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Aside } from "../Aside/Aside";
 import { Content } from "../Content/Content";
 import { LoadingPlugContainer } from "../LoadingPlug/LoadingPlugContainer";
@@ -9,6 +9,8 @@ export const ContentContainer = (props) => {
   const [stateSubreddits, setStateSubreddits] = useState(null);
   const [stateSubreddit, setStateSubreddit] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const asideRef = useRef(null);
+  const toTopRef = useRef(null);
   useEffect(() => {
     setIsLoading(true);
     fetch("https://www.reddit.com/r/popular.json")
@@ -76,12 +78,29 @@ export const ContentContainer = (props) => {
   };
   return (
     <div className={styles.container}>
+      <div
+        className={styles.subredditScroll}
+        ref={toTopRef}
+        onClick={() => asideRef.current.scrollIntoView({ behavior: "smooth" })}
+      >
+        Go To Subreddits
+      </div>
+      <div
+        className={styles.to_top_scroll}
+        onClick={() => toTopRef.current.scrollIntoView({ behavior: "smooth" })}
+      >
+        <i className="fas fa-chevron-circle-up"></i>
+      </div>
       {isLoading ? (
         <LoadingPlugContainer renderItem="post"></LoadingPlugContainer>
       ) : (
         <Content data={statePosts}></Content>
       )}
-      <Aside data={stateSubreddits} changeSrHandler={changeSubreddit}></Aside>
+      <Aside
+        data={stateSubreddits}
+        changeSrHandler={changeSubreddit}
+        refProp={asideRef}
+      ></Aside>
     </div>
   );
 };

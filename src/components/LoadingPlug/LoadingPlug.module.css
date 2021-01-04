@@ -6,6 +6,11 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.loading_plug_container {
+  flex: 4;
+  background-color: white;
+  margin-left: 20px;
+}
 .comment_author_container {
   display: flex;
   justify-content: space-between;
@@ -14,6 +19,9 @@
   width: 100%;
   display: flex;
   margin-bottom: 20px;
+}
+.content_post {
+  width: 100%;
 }
 .ups_container {
   height: 100%;
@@ -138,6 +146,37 @@
   animation-delay: 0s;
   animation-direction: alternate;
 }
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .loading_plug_container {
+    flex: 1;
+    margin: 0 10px;
+  }
+  .loading_title {
+    width: 90%;
+  }
+  .post_image_container {
+    width: 90%;
+    height: 200px;
+  }
+  .post_author {
+    width: 20%;
+  }
+  .post_created_time_load {
+    width: 30%;
+  }
+  .post_created_time_comment.post_created_time_load {
+    margin-top: 20px;
+  }
+  .loading_title.loading_title_comment {
+    width: 100%;
+  }
+}
+
 @keyframes animate {
   0% {
     background: linear-gradient(

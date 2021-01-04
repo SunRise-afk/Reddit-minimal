@@ -40,3 +40,58 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+/* media querys */
+@media (max-width: 768px) {
+  .logo {
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+  .subreddit_search_container {
+    width: 90%;
+    margin: 0 auto;
+    margin-left: 10px;
+  }
+  .subreddit_search_container input {
+    width: 70%;
+  }
+}
+@media (max-width: 414px) {
+  .logo {
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+  .subreddit_search_container {
+    margin-left: 10px;
+  }
+  .subreddit_search_container input {
+    width: 70%;
+  }
+}
+@media (max-width: 375px) {
+  .logo {
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+  .subreddit_search_container {
+    margin-left: 10px;
+  }
+  .subreddit_search_container input {
+    width: 68%;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+@media (max-width: 320px) {
+  .logo {
+    margin-left: 10px;
+    margin-right: 5px;
+  }
+  .subreddit_search_container {
+    margin-left: 10px;
+  }
+  .subreddit_search_container input {
+    width: 90px;
+  }
+}

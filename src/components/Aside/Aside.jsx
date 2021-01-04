@@ -4,7 +4,7 @@ import styles from "./Aside.module.css";
 
 export const Aside = (props) => {
   return (
-    <div className={styles.aside_container}>
+    <div className={styles.aside_container} ref={props.refProp}>
       <h2 className={styles.subreddits_title}>Subreddits</h2>
       {props.data === null
         ? null

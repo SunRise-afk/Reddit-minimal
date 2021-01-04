@@ -1,6 +1,6 @@
 .container {
   width: 96%;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 0px 20px 10px;
   margin: 10px 0;
   background-color: #fcfcfc;
@@ -25,4 +25,10 @@
 .comment_body {
   color: #6f6f6f;
   margin: 0;
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 89%;
+  }
 }

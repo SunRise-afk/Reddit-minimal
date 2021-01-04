@@ -1,16 +1,13 @@
 import React from "react";
 import { LoadingComments } from "./LoadingComments";
 import { LoadingPlug } from "./LoadingPlug";
+import styles from "./LoadingPlug.module.css";
 
 export const LoadingPlugContainer = (props) => {
   const isLoadingRenderArray = [1, 2, 3];
   return (
     <div
-      style={{
-        flex: "4",
-        backgroundColor: "white",
-        marginLeft: "20px",
-      }}
+      className={styles.loading_plug_container}
     >
       {isLoadingRenderArray.map((item) => {
         if (props.renderItem === "post") {
