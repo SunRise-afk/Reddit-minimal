@@ -1,5 +1,6 @@
 import React from "react";
 import { CommentItem } from "../CommentItem/CommentItem";
+import { LoadingPlugContainer } from "../LoadingPlug/LoadingPlugContainer";
 import styles from "./ContentItem.module.css";
 
 export const ContentItem = (props) => {
@@ -52,30 +53,32 @@ export const ContentItem = (props) => {
           {props.postCommentNum}
         </p>
       </div>
-      {props.showComments
-        ? props.comments.map((item) => {
-            if (item.kind !== "t1") {
-              return null;
-            }
-            return (
-              <CommentItem
-                key={item.data.id}
-                author={item.data.author}
-                body={item.data.body}
-                publicationTime={
-                  Date.now() -
-                  item.data.created_utc *
-                    `1${new Array(
-                      Date.now().toString().length -
-                        item.data.created_utc.toString().length
-                    )
-                      .fill(0)
-                      .join("")}`
-                }
-              ></CommentItem>
-            );
-          })
-        : null}
+      {props.showComments && props.commentsBtnActive ? (
+        props.comments.map((item) => {
+          if (item.kind !== "t1") {
+            return null;
+          }
+          return (
+            <CommentItem
+              key={item.data.id}
+              author={item.data.author}
+              body={item.data.body}
+              publicationTime={
+                Date.now() -
+                item.data.created_utc *
+                  `1${new Array(
+                    Date.now().toString().length -
+                      item.data.created_utc.toString().length
+                  )
+                    .fill(0)
+                    .join("")}`
+              }
+            ></CommentItem>
+          );
+        })
+      ) : props.commentsBtnActive ? (
+        <LoadingPlugContainer renderItem="comment"></LoadingPlugContainer>
+      ) : null}
     </div>
   );
 };

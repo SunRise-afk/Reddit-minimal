@@ -1,14 +1,8 @@
 import "./App.css";
-import { ContentContainer } from "./components/ContentContainer/ContentContainer";
-import { Navbar } from "./components/Navbar/Navbar";
+import { ClientContainer } from "./components/ClientContainer/ClientContainer";
 
 function App() {
-  return (
-    <>
-      <Navbar></Navbar>
-      <ContentContainer></ContentContainer>
-    </>
-  );
+  return <ClientContainer></ClientContainer>;
 }
 
 export default App;

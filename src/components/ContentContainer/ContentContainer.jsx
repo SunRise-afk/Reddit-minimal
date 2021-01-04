@@ -4,7 +4,7 @@ import { Content } from "../Content/Content";
 import { LoadingPlugContainer } from "../LoadingPlug/LoadingPlugContainer";
 import styles from "./ContentContainer.module.css";
 
-export const ContentContainer = () => {
+export const ContentContainer = (props) => {
   const [statePosts, setStatePosts] = useState(null);
   const [stateSubreddits, setStateSubreddits] = useState(null);
   const [stateSubreddit, setStateSubreddit] = useState(null);
@@ -21,7 +21,6 @@ export const ContentContainer = () => {
       .then((response) => {
         setStatePosts(response.data.children);
         setIsLoading(false);
-        console.log(response);
       });
   }, []);
   useEffect(() => {
@@ -33,7 +32,6 @@ export const ContentContainer = () => {
       })
       .then((response) => {
         setStateSubreddits(response.data.children);
-        console.log(response);
       });
   }, []);
 
@@ -41,7 +39,6 @@ export const ContentContainer = () => {
     if (stateSubreddit === null) {
       return;
     }
-    console.log("daet");
     setIsLoading(true);
     fetch(`https://www.reddit.com/${stateSubreddit}/.json`)
       .then((response) => {
@@ -50,11 +47,29 @@ export const ContentContainer = () => {
         }
       })
       .then((response) => {
-        console.log(response.data.children);
         setStatePosts(response.data.children);
         setIsLoading(false);
       });
   }, [stateSubreddit]);
+
+  useEffect(() => {
+    if (props.searchButtonState) {
+      setIsLoading(true);
+      fetch(`https://www.reddit.com/search.json?q=${props.searchbarValue}`)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+        })
+        .then((response) => {
+          props.setSearchbarValue("");
+          props.setSearchButtonState(false);
+          setStatePosts(response.data.children);
+          setIsLoading(false);
+        });
+    }
+    return;
+  }, [props.searchButtonState]);
 
   const changeSubreddit = (subredditTitle) => {
     setStateSubreddit(subredditTitle);
@@ -62,7 +77,7 @@ export const ContentContainer = () => {
   return (
     <div className={styles.container}>
       {isLoading ? (
-        <LoadingPlugContainer></LoadingPlugContainer>
+        <LoadingPlugContainer renderItem="post"></LoadingPlugContainer>
       ) : (
         <Content data={statePosts}></Content>
       )}

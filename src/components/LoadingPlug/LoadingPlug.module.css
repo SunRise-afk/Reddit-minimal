@@ -6,6 +6,10 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.comment_author_container {
+  display: flex;
+  justify-content: space-between;
+}
 .post_container {
   width: 100%;
   display: flex;
@@ -51,6 +55,11 @@
   overflow: hidden;
   border-radius: 5px;
 }
+.loading_title.loading_title_comment {
+  width: 500px;
+  height: 40px;
+  margin-top: 10px;
+}
 .post_image_container {
   width: 600px;
   height: 600px;
@@ -91,6 +100,10 @@
   margin-top: 20px;
   overflow: hidden;
   border-radius: 5px;
+}
+.post_created_time_comment.post_created_time_load {
+  width: 100px;
+  margin-top: 0;
 }
 .comment_loading {
   width: 70px;

@@ -19,9 +19,8 @@ export const ContentItemContainer = (props) => {
       .then((response) => {
         setComments(response[1].data.children);
         setHaveComments(true);
-        console.log(response[1]);
       });
-  }, [commentsBtnActive]);
+  }, [commentsBtnActive, props.permalink]);
 
   return (
     <ContentItem
@@ -33,6 +32,7 @@ export const ContentItemContainer = (props) => {
       postCommentNum={props.postCommentNum}
       showComments={haveComments}
       comments={comments}
+      commentsBtnActive={commentsBtnActive}
       commentBtnClickHandler={setCommentsBtnActive}
       hideComments={setHaveComments}
     ></ContentItem>

@@ -1,7 +1,12 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 
-export const Navbar = () => {
+export const Navbar = (props) => {
+  const submitHandler = () => {
+    if (props.searchbarValue.length > 0) {
+      props.searchButtonClickHandler(true);
+    }
+  };
   return (
     <div className={styles.navbar_container}>
       <div className={styles.logo}>
@@ -23,8 +28,14 @@ export const Navbar = () => {
         </p>
       </div>
       <div className={styles.subreddit_search_container}>
-        <input type="text" placeholder="Search" />
-        <button>
+        <input
+          type="text"
+          placeholder="Search"
+          value={props.searchbarValue}
+          onChange={(e) => props.changeHandler(e.target.value)}
+          onSubmit={submitHandler}
+        />
+        <button onClick={submitHandler}>
           <i className="fas fa-search"></i>
         </button>
       </div>
