@@ -5,6 +5,10 @@
   box-shadow: 0px 12px 33px 1px rgba(0, 0, 0, 0.24);
   padding: 20px;
   box-sizing: border-box;
+  transition: box-shadow 0.25s;
+}
+.container:hover {
+  box-shadow: 0px 3px 32px 8px rgba(0, 0, 0, 0.47);
 }
 .post_container {
   width: 100%;

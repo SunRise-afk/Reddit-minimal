@@ -1,4 +1,5 @@
 import React from "react";
+import { CommentItem } from "../CommentItem/CommentItem";
 import styles from "./ContentItem.module.css";
 
 export const ContentItem = (props) => {
@@ -53,11 +54,25 @@ export const ContentItem = (props) => {
       </div>
       {props.showComments
         ? props.comments.map((item) => {
+            if (item.kind !== "t1") {
+              return null;
+            }
             return (
-              <div key={item.data.id}>
-                {item.data.author}
-                {item.data.body}
-              </div>
+              <CommentItem
+                key={item.data.id}
+                author={item.data.author}
+                body={item.data.body}
+                publicationTime={
+                  Date.now() -
+                  item.data.created_utc *
+                    `1${new Array(
+                      Date.now().toString().length -
+                        item.data.created_utc.toString().length
+                    )
+                      .fill(0)
+                      .join("")}`
+                }
+              ></CommentItem>
             );
           })
         : null}
