@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.83466262.chunk.css",
-    "main.js": "/static/js/main.f4d31c7d.chunk.js",
-    "main.js.map": "/static/js/main.f4d31c7d.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.a82fb565.js",
-    "runtime-main.js.map": "/static/js/runtime-main.a82fb565.js.map",
-    "static/js/2.8ea29691.chunk.js": "/static/js/2.8ea29691.chunk.js",
-    "static/js/2.8ea29691.chunk.js.map": "/static/js/2.8ea29691.chunk.js.map",
-    "static/js/3.cb1cfbdb.chunk.js": "/static/js/3.cb1cfbdb.chunk.js",
-    "static/js/3.cb1cfbdb.chunk.js.map": "/static/js/3.cb1cfbdb.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/main.83466262.chunk.css.map": "/static/css/main.83466262.chunk.css.map",
-    "static/js/2.8ea29691.chunk.js.LICENSE.txt": "/static/js/2.8ea29691.chunk.js.LICENSE.txt"
+    "main.css": "/Reddit-minimal/static/css/main.83466262.chunk.css",
+    "main.js": "/Reddit-minimal/static/js/main.f4d31c7d.chunk.js",
+    "main.js.map": "/Reddit-minimal/static/js/main.f4d31c7d.chunk.js.map",
+    "runtime-main.js": "/Reddit-minimal/static/js/runtime-main.a9b917f8.js",
+    "runtime-main.js.map": "/Reddit-minimal/static/js/runtime-main.a9b917f8.js.map",
+    "static/js/2.8ea29691.chunk.js": "/Reddit-minimal/static/js/2.8ea29691.chunk.js",
+    "static/js/2.8ea29691.chunk.js.map": "/Reddit-minimal/static/js/2.8ea29691.chunk.js.map",
+    "static/js/3.cb1cfbdb.chunk.js": "/Reddit-minimal/static/js/3.cb1cfbdb.chunk.js",
+    "static/js/3.cb1cfbdb.chunk.js.map": "/Reddit-minimal/static/js/3.cb1cfbdb.chunk.js.map",
+    "index.html": "/Reddit-minimal/index.html",
+    "static/css/main.83466262.chunk.css.map": "/Reddit-minimal/static/css/main.83466262.chunk.css.map",
+    "static/js/2.8ea29691.chunk.js.LICENSE.txt": "/Reddit-minimal/static/js/2.8ea29691.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.a82fb565.js",
+    "static/js/runtime-main.a9b917f8.js",
     "static/js/2.8ea29691.chunk.js",
     "static/css/main.83466262.chunk.css",
     "static/js/main.f4d31c7d.chunk.js"
