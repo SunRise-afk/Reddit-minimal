@@ -21,6 +21,7 @@
   margin: 0 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .ups_paragraph {
   color: #999999;
@@ -73,4 +74,10 @@
 }
 .comment_count {
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .ups_container {
+    margin: 0 20px 0 0;
+  }
 }

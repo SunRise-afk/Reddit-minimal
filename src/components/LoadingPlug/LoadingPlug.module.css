@@ -159,6 +159,9 @@
   .loading_title {
     width: 90%;
   }
+  .ups_container {
+    margin: 0 20px 0 0;
+  }
   .post_image_container {
     width: 90%;
     height: 200px;
