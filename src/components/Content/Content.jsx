@@ -23,12 +23,10 @@ export const Content = (props) => {
                 postDate={
                   Date.now() -
                   item.data.created_utc *
-                    `1${new Array(
+                    `1${"0".repeat(
                       Date.now().toString().length -
                         item.data.created_utc.toString().length
-                    )
-                      .fill(0)
-                      .join("")}`
+                    )}`
                 }
                 postCommentNum={item.data.num_comments}
                 permalink={item.data.permalink}

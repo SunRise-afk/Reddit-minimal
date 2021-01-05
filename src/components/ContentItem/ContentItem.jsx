@@ -66,12 +66,10 @@ export const ContentItem = (props) => {
               publicationTime={
                 Date.now() -
                 item.data.created_utc *
-                  `1${new Array(
+                  `1${"0".repeat(
                     Date.now().toString().length -
                       item.data.created_utc.toString().length
-                  )
-                    .fill(0)
-                    .join("")}`
+                  )}`
               }
             ></CommentItem>
           );

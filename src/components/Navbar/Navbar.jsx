@@ -1,10 +1,17 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  changeSearchbarValue,
+  enableSearchButton,
+} from "../../redux/searchActions";
 import styles from "./Navbar.module.css";
 
-export const Navbar = (props) => {
+export const Navbar = () => {
+  const dispatch = useDispatch();
+  const searchbarValue = useSelector((state) => state.search.searchState);
   const submitHandler = () => {
-    if (props.searchbarValue.length > 0) {
-      props.searchButtonClickHandler(true);
+    if (searchbarValue.length > 0) {
+      dispatch(enableSearchButton());
     }
   };
   return (
@@ -31,8 +38,8 @@ export const Navbar = (props) => {
         <input
           type="text"
           placeholder="Search"
-          value={props.searchbarValue}
-          onChange={(e) => props.changeHandler(e.target.value)}
+          value={searchbarValue}
+          onChange={(e) => dispatch(changeSearchbarValue(e.target.value))}
           onSubmit={submitHandler}
         />
         <button onClick={submitHandler}>
